@@ -66,8 +66,8 @@ void Error_Handler(void);
 #define MOTOR2_DIR_GPIO_Port GPIOA
 #define MOTOR2_SLEEP_Pin GPIO_PIN_4
 #define MOTOR2_SLEEP_GPIO_Port GPIOC
-#define MOTOR2__Pin GPIO_PIN_5
-#define MOTOR2__GPIO_Port GPIOC
+#define MOTOR2_RESET_Pin GPIO_PIN_5
+#define MOTOR2_RESET_GPIO_Port GPIOC
 #define MOTOR2_MS2_Pin GPIO_PIN_0
 #define MOTOR2_MS2_GPIO_Port GPIOB
 #define MOTOR2_MS3_Pin GPIO_PIN_1

@@ -3,6 +3,7 @@
 
 #include "stm32f3xx_hal.h"
 #include "main.h"
+#include <stdbool.h>
 
 #define  MOTORS_NUM 3
 
@@ -24,10 +25,10 @@ typedef struct Motor_Tag {
 
 
 	struct {
-		uint8_t isOn :1;
-		uint8_t reset :1;
-		uint8_t sleep :1;
-		uint8_t direction :1;
+		bool isOn :1;
+		bool reset :1;
+		bool sleep :1;
+		bool direction :1;
 	}flags;
 
 	//struct Motor_Tag *motors[MOTORS_NUM];
@@ -42,7 +43,14 @@ typedef struct Motor_Tag {
 }Motor_T;
 
 void Motor_Init(Motor_T* sett);
-void Motor_PinMode(Motor_T *sets);
+void Motor_PinMode(Motor_T *sett);
 void Motor_MicroPinSet(Motor_T *sett);
+void Motor_Update(Motor_T *sett);
+/* GET FLAGS VALUES */
+bool Get_IsOn(Motor_T *sett);
+bool Get_Dir(Motor_T *sett);
+bool Get_Sleep(Motor_T *sett);
+bool Get_Reset(Motor_T *sett);
+
 
 #endif /* MOTOR_H */

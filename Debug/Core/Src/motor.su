@@ -1,0 +1,8 @@
+motor.c:18:6:Motor_PinMode	16	static
+motor.c:29:6:Motor_MicroPinSet	16	static
+motor.c:60:6:Motor_Init	24	static
+motor.c:74:6:Get_IsOn	16	static
+motor.c:78:6:Get_Dir	16	static
+motor.c:82:6:Get_Sleep	16	static
+motor.c:86:6:Get_Return	16	static
+motor.c:91:6:Motor_Update	16	static

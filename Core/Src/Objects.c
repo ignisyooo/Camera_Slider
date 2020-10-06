@@ -39,11 +39,42 @@ Motor_T motor1 = {
 		},
 };
 
+Motor_T motor2 = {
+				.Pin_Direction = { .PORT = MOTOR2_DIR_GPIO_Port, .PIN =
+				MOTOR2_DIR_Pin },
+				.Pin_Reset = { .PORT = MOTOR2_RESET_GPIO_Port, .PIN =
+				MOTOR2_RESET_Pin },
+				.Pin_Sleep = { .PORT = MOTOR2_SLEEP_GPIO_Port,
+				.PIN = MOTOR2_SLEEP_Pin },
+				.Pin_Steep = { .PORT = MOTOR2_STEP_GPIO_Port,
+				.PIN = MOTOR2_STEP_GPIO_Port },
+				.MS1 = { .PORT = MOTOR2_MS1_GPIO_Port,
+				. PIN = MOTOR2_MS1_Pin },
+				.MS2 = { .PORT = MOTOR2_MS2_GPIO_Port, . PIN =
+				MOTOR2_MS2_Pin },
+				.MS3 = { .PORT = MOTOR2_MS3_GPIO_Port, . PIN =
+				MOTOR2_MS3_Pin },
+
+				.flags = {
+						.isOn = 0,
+						.reset = 0,
+						.sleep = 0,
+						.direction = 0,
+				},
+
+				.device = {
+						.motor_num = 2,
+						.speed = 0,
+						.microstep =1,
+						.positionStart =1,
+				},
+};
+
 void add_motors(Motor_T *sett)
 {
-	sett[0]=&motor1;
-	sett[1]=&motor2;
-	sett[2]=&motor3;
+	sett[0]=motor1;
+	sett[1]=motor2;
+	//sett[2]=&motor3;
 }
 
 

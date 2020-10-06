@@ -9,6 +9,7 @@
 #define INC_OBJECTS_H_
 
 #include "motor.h"
+#include "tim.h"
 
 void add_motors(Motor_T * sett);
 
