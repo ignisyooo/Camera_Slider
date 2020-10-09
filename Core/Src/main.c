@@ -20,11 +20,16 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "tim.h"
+#include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "Objects.h"
+#include "parametr.h"
+#include "setter.h"
+#include <stdbool.h>
+#include <stdlib.h>
 //#include "motor.h"
 /* USER CODE END Includes */
 
@@ -46,6 +51,7 @@
 
 /* USER CODE BEGIN PV */
 extern Motor_T Motor_set[MOTORS_NUM];
+bool receive=false;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -88,24 +94,24 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_TIM6_Init();
+  MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
 
 	add_motors(Motor_set);
+
 	for (int i = 0; i < MOTORS_NUM - 2; i++) {
 		Motor_Init(&Motor_set[i]);
 	}
-	//HAL_TIM_Base_Start_IT(&htim6);
-	Motor_Update(Motor_set);
+	set(Motor_set);
+	HAL_TIM_Base_Start_IT(&htim6);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 	while (1) {
     /* USER CODE END WHILE */
-		HAL_GPIO_WritePin(MOTOR1_STEP_GPIO_Port, MOTOR1_STEP_Pin, GPIO_PIN_SET);
-		HAL_Delay(1);
-		HAL_GPIO_WritePin(MOTOR1_STEP_GPIO_Port, MOTOR1_STEP_Pin, GPIO_PIN_RESET);
-		HAL_Delay(10);
+		//motor_run(Motor_set);
     /* USER CODE BEGIN 3 */
 	}
   /* USER CODE END 3 */
@@ -119,6 +125,7 @@ void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
 
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
@@ -147,26 +154,16 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART3;
+  PeriphClkInit.Usart3ClockSelection = RCC_USART3CLKSOURCE_PCLK1;
+  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
+  {
+    Error_Handler();
+  }
 }
 
 /* USER CODE BEGIN 4 */
-/*
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
-	if (htim->Instance == &htim6) {
 
-		 for(int i=0;i <MOTORS_NUM-2; i++)
-		 {
-		 if(Get_IsOn(&Motor_set[i]))
-		 {
-		 Motor_Update(&Motor_set[i]);
-		 }
-
-		 }
-
-
-	}
-}
-*/
 /* USER CODE END 4 */
 
 /**

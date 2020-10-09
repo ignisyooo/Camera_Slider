@@ -33,9 +33,10 @@ Motor_T motor1 = {
 
 		.device = {
 				.motor_num = 1,
-				.speed = 0,
+				//.speed = 0,
 				.microstep =1,
 				.positionStart =1,
+				.stepSize = 3,
 		},
 };
 
@@ -64,11 +65,13 @@ Motor_T motor2 = {
 
 				.device = {
 						.motor_num = 2,
-						.speed = 0,
+						//.speed = 0,
 						.microstep =1,
 						.positionStart =1,
+						.stepSize = 3,
 				},
 };
+
 
 void add_motors(Motor_T *sett)
 {

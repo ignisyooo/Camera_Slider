@@ -6,8 +6,23 @@
 #include <stdbool.h>
 
 #define  MOTORS_NUM 3
+#define MAX_POINTS 5
+#define TIM_FREQ 1000
+#define HIGH 1
+#define LOW 0
+#define CW 1
+#define CWC 0
+#define SLIDER_LENGHT 10000 //x*0.1 [mm]
 
+typedef enum MotorErr_Tag
+{
+	MOTOR_OK,
+	MOTOR_ERROR,
+	MOTOR_INTERRUPT_ERROR,
+	MOTOR_TIMEOUT_ERROR
+}MotorErr;
 
+/*For now we use only 1 microstep*/
 typedef struct {
 	GPIO_TypeDef *PORT;
 	uint16_t PIN;
@@ -23,29 +38,45 @@ typedef struct Motor_Tag {
 	IO_Pin MS3;
 
 
-
 	struct {
-		bool isOn :1;
-		bool reset :1;
-		bool sleep :1;
-		bool direction :1;
+		uint8_t isOn :1;
+		uint8_t reset :1;
+		uint8_t sleep :1;
+		uint8_t direction :1;
+		uint8_t stepPhase :1;
 	}flags;
 
-	//struct Motor_Tag *motors[MOTORS_NUM];
+	struct{
+		uint16_t changeTime;
+		uint16_t stepLeft;
+		uint16_t pulse;
+	}counter;
+
 
 	struct
 	{
+		uint8_t points_num;
 		uint8_t motor_num;
-		double speed;
+		int stepSize;
 		uint8_t microstep;
 		int positionStart;
 	}device;
+
+	struct {
+		int position;
+		double speed[MAX_POINTS];
+	}data;
 }Motor_T;
 
 void Motor_Init(Motor_T* sett);
 void Motor_PinMode(Motor_T *sett);
-void Motor_MicroPinSet(Motor_T *sett);
-void Motor_Update(Motor_T *sett);
+MotorErr Motor_MicroPinSet(Motor_T *sett);
+void Motor_Update_1(Motor_T *sett);
+void Motor_Update_2(Motor_T *sett);
+MotorErr motorRun(Motor_T *sett);
+MotorErr motorStartMove(Motor_T *sett);
+void motorStop(Motor_T *sett);
+void motorPause(Motor_T *sett);
 /* GET FLAGS VALUES */
 bool Get_IsOn(Motor_T *sett);
 bool Get_Dir(Motor_T *sett);

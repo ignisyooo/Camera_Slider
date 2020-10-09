@@ -1,0 +1,2 @@
+parametr.c:11:9:Uart_readData	96	static
+parametr.c:50:9:Uart_write_data_to_Motor_T	16	static
