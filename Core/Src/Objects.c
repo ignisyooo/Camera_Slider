@@ -8,6 +8,13 @@
 #include "main.h"
 #include "Objects.h"
 
+char * MotorErr_string[4]={
+		"MOTOR_OK",
+		"MOTOR_ERROR",
+		"MOTOR_INTERRUPT_ERROR",
+		"MOTOR_TIMEOUT_ERROR"
+};
+
 Motor_T motor1 = {
 		.Pin_Direction = { .PORT = MOTOR1_DIR_GPIO_Port, .PIN =
 		MOTOR1_DIR_Pin },
@@ -16,7 +23,7 @@ Motor_T motor1 = {
 		.Pin_Sleep = { .PORT = MOTOR1_SLEEP_GPIO_Port,
 		.PIN = MOTOR1_SLEEP_Pin },
 		.Pin_Steep = { .PORT = MOTOR1_STEP_GPIO_Port,
-		.PIN = MOTOR1_STEP_GPIO_Port },
+		.PIN = MOTOR1_STEP_Pin},
 		.MS1 = { .PORT = MOTOR1_MS1_GPIO_Port,
 		. PIN = MOTOR1_MS1_Pin },
 		.MS2 = { .PORT = MOTOR1_MS2_GPIO_Port, . PIN =

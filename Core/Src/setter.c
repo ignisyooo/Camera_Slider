@@ -6,12 +6,10 @@
  */
 #include "setter.h"
 
-void set(Motor_T *sett)
-{
-	sett->counter.pulse = 200;
-	sett->counter.changeTime =sett->counter.pulse;
-
-
-
+void set(Motor_T *sett) {
+	sett->counter.pulse = 1;
+	sett->counter.changeTime = sett->counter.pulse;
+	sett->counter.stepLeft = 2 * 1000;
+	Motor_PinMode(sett);
 }
 

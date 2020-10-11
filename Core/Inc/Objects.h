@@ -11,24 +11,10 @@
 #include "motor.h"
 #include "tim.h"
 
-
-/*
-char * MotorErr_string[4]={
-		"MOTOR_OK",
-		"MOTOR_ERROR",
-		"MOTOR_INTERRUPT_ERROR",
-		"MOTOR_TIMEOUT_ERROR"
-};
-*/
-void add_motors(Motor_T * sett);
+void add_motors(Motor_T *sett);
 
 Motor_T Motor_set[MOTORS_NUM];
 
 MotorErr Err_Mode;
-
-
-
-
-
 
 #endif /* INC_OBJECTS_H_ */

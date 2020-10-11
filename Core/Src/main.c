@@ -25,11 +25,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "Objects.h"
-#include "parametr.h"
 #include "setter.h"
-#include <stdbool.h>
-#include <stdlib.h>
+#include "Interrupt.h"
 //#include "motor.h"
 /* USER CODE END Includes */
 
@@ -51,7 +48,6 @@
 
 /* USER CODE BEGIN PV */
 extern Motor_T Motor_set[MOTORS_NUM];
-bool receive=false;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -102,7 +98,8 @@ int main(void)
 	for (int i = 0; i < MOTORS_NUM - 2; i++) {
 		Motor_Init(&Motor_set[i]);
 	}
-	set(Motor_set);
+	set(&Motor_set[0]);
+	motorStartMove(&Motor_set[0]);
 	HAL_TIM_Base_Start_IT(&htim6);
 
   /* USER CODE END 2 */
@@ -111,7 +108,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
 	while (1) {
     /* USER CODE END WHILE */
-		//motor_run(Motor_set);
+
     /* USER CODE BEGIN 3 */
 	}
   /* USER CODE END 3 */

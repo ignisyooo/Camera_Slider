@@ -14,13 +14,9 @@
 #define CWC 0
 #define SLIDER_LENGHT 10000 //x*0.1 [mm]
 
-typedef enum MotorErr_Tag
-{
-	MOTOR_OK,
-	MOTOR_ERROR,
-	MOTOR_INTERRUPT_ERROR,
-	MOTOR_TIMEOUT_ERROR
-}MotorErr;
+typedef enum MotorErr_Tag {
+	MOTOR_OK, MOTOR_ERROR, MOTOR_INTERRUPT_ERROR, MOTOR_TIMEOUT_ERROR
+} MotorErr;
 
 /*For now we use only 1 microstep*/
 typedef struct {
@@ -37,51 +33,44 @@ typedef struct Motor_Tag {
 	IO_Pin MS2;
 	IO_Pin MS3;
 
-
 	struct {
 		uint8_t isOn :1;
 		uint8_t reset :1;
 		uint8_t sleep :1;
 		uint8_t direction :1;
 		uint8_t stepPhase :1;
-	}flags;
+	} flags;
 
-	struct{
+	struct {
 		uint16_t changeTime;
 		uint16_t stepLeft;
 		uint16_t pulse;
-	}counter;
+	} counter;
 
-
-	struct
-	{
+	struct {
 		uint8_t points_num;
 		uint8_t motor_num;
 		int stepSize;
 		uint8_t microstep;
 		int positionStart;
-	}device;
+	} device;
 
 	struct {
 		int position;
 		double speed[MAX_POINTS];
-	}data;
-}Motor_T;
+	} data;
+} Motor_T;
 
-void Motor_Init(Motor_T* sett);
+void Motor_Init(Motor_T *sett);
 void Motor_PinMode(Motor_T *sett);
 MotorErr Motor_MicroPinSet(Motor_T *sett);
-void Motor_Update_1(Motor_T *sett);
-void Motor_Update_2(Motor_T *sett);
 MotorErr motorRun(Motor_T *sett);
 MotorErr motorStartMove(Motor_T *sett);
-void motorStop(Motor_T *sett);
-void motorPause(Motor_T *sett);
+MotorErr motorStop(Motor_T *sett);
 /* GET FLAGS VALUES */
 bool Get_IsOn(Motor_T *sett);
 bool Get_Dir(Motor_T *sett);
 bool Get_Sleep(Motor_T *sett);
 bool Get_Reset(Motor_T *sett);
-
 
 #endif /* MOTOR_H */
