@@ -1,1 +1,3 @@
-setter.c:9:6:set	16	static
+setter.c:10:10:set	40	static
+setter.c:27:10:set_stepLeft	24	static
+setter.c:31:10:set_pulse	32	static

@@ -29,7 +29,7 @@ Core/Src/Objects.o: ../Core/Src/Objects.c ../Core/Inc/main.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h \
  ../Core/Inc/Objects.h ../Core/Inc/motor.h ../Core/Inc/main.h \
- ../Core/Inc/tim.h
+ ../Core/Inc/FIFO.h ../Core/Inc/tim.h
 
 ../Core/Inc/main.h:
 
@@ -96,5 +96,7 @@ Core/Src/Objects.o: ../Core/Src/Objects.c ../Core/Inc/main.h \
 ../Core/Inc/motor.h:
 
 ../Core/Inc/main.h:
+
+../Core/Inc/FIFO.h:
 
 ../Core/Inc/tim.h:

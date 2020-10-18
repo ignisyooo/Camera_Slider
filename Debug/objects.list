@@ -1,3 +1,4 @@
+"Core/Src/FIFO.o"
 "Core/Src/Interrupt.o"
 "Core/Src/Objects.o"
 "Core/Src/gpio.o"

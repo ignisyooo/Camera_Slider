@@ -3,9 +3,10 @@
 
 #include "stm32f3xx_hal.h"
 #include "main.h"
+#include "FIFO.h"
 #include <stdbool.h>
 
-#define  MOTORS_NUM 3
+#define MOTORS_NUM 3
 #define MAX_POINTS 5
 #define TIM_FREQ 1000
 #define HIGH 1
@@ -57,8 +58,11 @@ typedef struct Motor_Tag {
 
 	struct {
 		int position;
-		double speed[MAX_POINTS];
+		double speed;
 	} data;
+
+	Fifo_data *fifo;
+
 } Motor_T;
 
 void Motor_Init(Motor_T *sett);

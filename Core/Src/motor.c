@@ -69,7 +69,7 @@ void Motor_Init(Motor_T *sett) {
 	sett->counter.pulse = 0;
 	sett->counter.stepLeft = 0;
 	sett->device.positionStart = 0;
-	sett->device.points_num = 1;
+	sett->device.points_num = -1;
 
 	sett->device.microstep = 0;
 	Motor_PinMode(sett);
@@ -85,7 +85,7 @@ MotorErr motorStop(Motor_T *sett) {
 
 	sett->flags.isOn = 0;
 	sett->flags.sleep = 1;
-
+	sett->flags.stepPhase = LOW;
 	Motor_PinMode(sett);
 
 	return retval;
@@ -99,7 +99,7 @@ MotorErr motorRun(Motor_T *sett) {
 			--(sett->counter.stepLeft);
 
 			if (sett->counter.stepLeft <= 0) {
-				sett->flags.isOn = 0;
+				//sett->flags.isOn = 0;
 				motorStop(sett);
 				return MOTOR_INTERRUPT_ERROR;
 			}

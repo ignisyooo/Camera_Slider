@@ -12,11 +12,14 @@
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 	if (htim->Instance == TIM6) {
 		static MotorErr retval = MOTOR_OK;
-		for (int i = 0; i < MOTORS_NUM - 2; i++) {
+		for (int i = 0; i < MOTORS_NUM - 1; i++) {
 			if (MOTOR_OK == retval) {
 				retval = motorRun(&Motor_set[i]);
 			} else if (MOTOR_INTERRUPT_ERROR == retval) {
-				//do nothing
+					retval = set(&Motor_set[i]);
+					motorStartMove(&Motor_set[i]);
+			}else{
+				motorStop(&Motor_set[i]);
 			}
 		}
 	}

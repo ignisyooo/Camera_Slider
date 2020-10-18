@@ -40,13 +40,12 @@ Motor_T motor1 = {
 
 		.device = {
 				.motor_num = 1,
-				//.speed = 0,
 				.microstep =1,
 				.positionStart =1,
 				.stepSize = 3,
 		},
 };
-
+// Step size from motor2 is in degrees
 Motor_T motor2 = {
 				.Pin_Direction = { .PORT = MOTOR2_DIR_GPIO_Port, .PIN =
 				MOTOR2_DIR_Pin },
@@ -55,7 +54,7 @@ Motor_T motor2 = {
 				.Pin_Sleep = { .PORT = MOTOR2_SLEEP_GPIO_Port,
 				.PIN = MOTOR2_SLEEP_Pin },
 				.Pin_Steep = { .PORT = MOTOR2_STEP_GPIO_Port,
-				.PIN = MOTOR2_STEP_GPIO_Port },
+				.PIN = MOTOR2_STEP_Pin},
 				.MS1 = { .PORT = MOTOR2_MS1_GPIO_Port,
 				. PIN = MOTOR2_MS1_Pin },
 				.MS2 = { .PORT = MOTOR2_MS2_GPIO_Port, . PIN =
@@ -75,7 +74,7 @@ Motor_T motor2 = {
 						//.speed = 0,
 						.microstep =1,
 						.positionStart =1,
-						.stepSize = 3,
+						.stepSize = 1.8,
 				},
 };
 

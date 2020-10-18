@@ -28,7 +28,7 @@ Core/Src/motor.o: ../Core/Src/motor.c ../Core/Inc/motor.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h \
- ../Core/Inc/main.h ../Core/Inc/main.h
+ ../Core/Inc/main.h ../Core/Inc/FIFO.h ../Core/Inc/main.h
 
 ../Core/Inc/motor.h:
 
@@ -91,5 +91,7 @@ Core/Src/motor.o: ../Core/Src/motor.c ../Core/Inc/motor.h \
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h:
 
 ../Core/Inc/main.h:
+
+../Core/Inc/FIFO.h:
 
 ../Core/Inc/main.h:

@@ -95,11 +95,13 @@ int main(void)
 
 	add_motors(Motor_set);
 
-	for (int i = 0; i < MOTORS_NUM - 2; i++) {
+
+	for (int i = 0; i < MOTORS_NUM - 1; i++) {
 		Motor_Init(&Motor_set[i]);
+		set(&Motor_set[0]);
 	}
-	set(&Motor_set[0]);
 	motorStartMove(&Motor_set[0]);
+	motorStartMove(&Motor_set[1]);
 	HAL_TIM_Base_Start_IT(&htim6);
 
   /* USER CODE END 2 */

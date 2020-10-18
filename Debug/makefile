@@ -46,8 +46,8 @@ Slider_Controller.bin \
 all: Slider_Controller.elf secondary-outputs
 
 # Tool invocations
-Slider_Controller.elf: $(OBJS) $(USER_OBJS) C:\Users\rzesz\Desktop\STM_Code\Slider_Controller\STM32F303RETX_FLASH.ld
-	arm-none-eabi-gcc -o "Slider_Controller.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\rzesz\Desktop\STM_Code\Slider_Controller\STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Slider_Controller.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Slider_Controller.elf: $(OBJS) $(USER_OBJS) C:\Users\rzesz\Desktop\Coding\STM_Code\Slider_Controller\STM32F303RETX_FLASH.ld
+	arm-none-eabi-gcc -o "Slider_Controller.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\rzesz\Desktop\Coding\STM_Code\Slider_Controller\STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Slider_Controller.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
