@@ -22,7 +22,7 @@ uint16_t read_data(Fifo_data **data);
 //Temporary function
 Fifo_data *getLast(Fifo_data *data);
 void write_data_to_FIFO(Fifo_data **data, uint16_t val);
-
+int read_time(Fifo_data *data);
 
 
 #endif /* INC_FIFO_H_ */

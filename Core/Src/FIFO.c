@@ -7,6 +7,7 @@
 
 #include "FIFO.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 uint8_t get_amount_of_times(Fifo_data *data) {
 	uint8_t size = 1;
@@ -22,7 +23,7 @@ uint8_t get_amount_of_times(Fifo_data *data) {
 
 uint16_t read_data(Fifo_data **data) {
 	uint16_t retVal;
-	if (*data) {
+	if (*data == NULL) {
 		return -1;
 	} else {
 		Fifo_data *new = NULL;
@@ -59,4 +60,20 @@ void write_data_to_FIFO(Fifo_data **data, uint16_t val)
 		(*data)->next=NULL;
 		(*data)->time=val;
 	}
+}
+int read_time(Fifo_data *data)
+{
+	int time = 0;
+	if(!data)
+	{
+		return 0;
+	}
+	else{
+		while(data)
+		{
+			time+=data->time;
+			data=data->next;
+		}
+	}
+	return time;
 }

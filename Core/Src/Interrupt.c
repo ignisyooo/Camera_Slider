@@ -7,29 +7,52 @@
 
 #include "Interrupt.h"
 #include "Objects.h"
+#include "self_timer.h"
 #include "main.h"
+
+MotorErr retval = MOTOR_OK;
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 	if (htim->Instance == TIM6) {
-		static MotorErr retval = MOTOR_OK;
-		for (int i = 0; i < MOTORS_NUM - 1; i++) {
-			if (MOTOR_OK == retval) {
+		if(MOTOR_OK == retval)
+		{
+			for(int i=0;i<MOTORS_NUM;i++)
+			{
 				retval = motorRun(&Motor_set[i]);
-			} else if (MOTOR_INTERRUPT_ERROR == retval) {
-					retval = set(&Motor_set[i]);
-					motorStartMove(&Motor_set[i]);
-			}else{
+			}
+		}
+		else if(MOTOR_INTERRUPT_ERROR == retval)
+		{
+			for(int i=0;i<MOTORS_NUM;i++)
+			{
+				if(i==0)
+					retval = set(Motor_set);
+				else
+					retval = set_for_angle(&Motor_set[i]);
+				motorStartMove(&Motor_set[i]);
+			}
+		}
+		else
+		{
+			for(int i=0;i<MOTORS_NUM;i++)
+			{
 				motorStop(&Motor_set[i]);
 			}
 		}
+	} else if (htim->Instance == TIM7) {
+		static uint8_t state = 1;
+		if (1 == state)
+			state = run_trigger(&timer_T);
+		else {
+			// Do nothing
+		}
 	}
-
 }
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 	if (GPIO_Pin == LIMIT_SWITCH_Pin) {
 		for (int i = 0; i < MOTORS_NUM; i++) {
-			motorStop(Motor_set + i);
+			//motorStop(Motor_set + i);
 		}
 	}
 }

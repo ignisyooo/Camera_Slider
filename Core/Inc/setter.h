@@ -11,7 +11,9 @@
 #include "Objects.h"
 
 MotorErr set(Motor_T *sett);
-uint16_t set_stepLeft(uint16_t len, int step);
-uint16_t set_pulse(uint16_t time, uint16_t (*fun)(uint16_t len, int step), uint16_t len, int step);
+int set_stepLeft(uint16_t len, int step);
+uint16_t set_pulse(uint16_t time, int stepleft);
+MotorErr set_for_angle(Motor_T *sett);
+
 
 #endif /* INC_SETTER_H_ */

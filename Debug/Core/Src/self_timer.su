@@ -1,0 +1,5 @@
+self_timer.c:9:6:device_choose	16	static
+self_timer.c:15:5:calculate_intterupts	16	static
+self_timer.c:19:9:run_trigger	24	static
+self_timer.c:37:6:set_trigger	16	static
+self_timer.c:43:6:init_t	16	static

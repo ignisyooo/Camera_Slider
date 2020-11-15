@@ -27,6 +27,7 @@
 /* USER CODE BEGIN Includes */
 #include "setter.h"
 #include "Interrupt.h"
+#include "self_timer.h"
 //#include "motor.h"
 /* USER CODE END Includes */
 
@@ -48,6 +49,7 @@
 
 /* USER CODE BEGIN PV */
 extern Motor_T Motor_set[MOTORS_NUM];
+extern Trigger_T timer_T;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -91,18 +93,34 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM6_Init();
   MX_USART3_UART_Init();
+  MX_TIM7_Init();
   /* USER CODE BEGIN 2 */
 
 	add_motors(Motor_set);
+	write_data_to_FIFO(&(Motor_set[0].fifo), 20);
+	write_data_to_FIFO(&(Motor_set[0].fifo), 12);
+	write_data_to_FIFO(&(Motor_set[0].fifo), 30);
+	write_data_to_FIFO(&(Motor_set[0].fifo), 10);
+	init_t(&timer_T, Motor_set);
+	Motor_set[1].device.positionStart= -170;
+	Motor_set[1].device.positionEnd = 300;
+	Motor_set[2].device.positionStart = -170;
+	Motor_set[2].device.positionEnd = 300;
 
 
-	for (int i = 0; i < MOTORS_NUM - 1; i++) {
-		Motor_Init(&Motor_set[i]);
-		set(&Motor_set[0]);
+	for (int i = 0; i < MOTORS_NUM; i++) {
+		Motor_Init(Motor_set+i);
+		if(i==0)
+			set(Motor_set);
+		else
+			set_for_angle(Motor_set+i);
+
 	}
-	motorStartMove(&Motor_set[0]);
+	motorStartMove(Motor_set);
 	motorStartMove(&Motor_set[1]);
+	motorStartMove(&Motor_set[2]);
 	HAL_TIM_Base_Start_IT(&htim6);
+	HAL_TIM_Base_Start_IT(&htim7);
 
   /* USER CODE END 2 */
 

@@ -7,6 +7,7 @@
 
 #include "main.h"
 #include "parametr.h"
+#include <stdio.h>
 
 ErrUart Uart_readData(Motor_T *sett) {
 	uint8_t wyraz[50];

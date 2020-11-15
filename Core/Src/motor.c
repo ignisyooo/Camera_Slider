@@ -68,7 +68,7 @@ void Motor_Init(Motor_T *sett) {
 
 	sett->counter.pulse = 0;
 	sett->counter.stepLeft = 0;
-	sett->device.positionStart = 0;
+	sett->data.position = 0;
 	sett->device.points_num = -1;
 
 	sett->device.microstep = 0;
@@ -99,7 +99,6 @@ MotorErr motorRun(Motor_T *sett) {
 			--(sett->counter.stepLeft);
 
 			if (sett->counter.stepLeft <= 0) {
-				//sett->flags.isOn = 0;
 				motorStop(sett);
 				return MOTOR_INTERRUPT_ERROR;
 			}
@@ -150,6 +149,33 @@ MotorErr motorStartMove(Motor_T *sett) {
 	Motor_PinMode(sett);
 
 	return MOTOR_OK;
+}
+
+void prepareMotor(Motor_T *sett)
+{
+	if(sett->device.positionStart <0)
+		sett->flags.direction = CWC;
+	else
+		sett->flags.direction = CW;
+
+	sett->flags.sleep = 0;
+	sett->flags.isOn = 1;
+
+	uint8_t iter = ceil(abs(sett->device.positionStart)/sett->device.stepSize);
+	Motor_PinMode(sett);
+
+	for(int i=0;i<iter;++i)
+	{
+		HAL_GPIO_WritePin(sett->Pin_Steep.PORT, sett->Pin_Steep.PIN, GPIO_PIN_SET);
+		HAL_Delay(1);
+		HAL_GPIO_WritePin(sett->Pin_Steep.PORT, sett->Pin_Steep.PIN, GPIO_PIN_RESET);
+		HAL_Delay(1);
+	}
+
+	sett->flags.sleep = 1;
+	sett->flags.isOn = 0;
+	sett->flags.direction = (sett->flags.direction) ? CWC : CW;
+	Motor_PinMode(sett);
 }
 
 bool Get_IsOn(Motor_T *sett) {

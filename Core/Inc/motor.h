@@ -4,6 +4,7 @@
 #include "stm32f3xx_hal.h"
 #include "main.h"
 #include "FIFO.h"
+#include <math.h>
 #include <stdbool.h>
 
 #define MOTORS_NUM 3
@@ -13,7 +14,7 @@
 #define LOW 0
 #define CW 1
 #define CWC 0
-#define SLIDER_LENGHT 10000 //x*0.1 [mm]
+#define SLIDER_LENGHT 9000 //x*0.1 [mm]
 
 typedef enum MotorErr_Tag {
 	MOTOR_OK, MOTOR_ERROR, MOTOR_INTERRUPT_ERROR, MOTOR_TIMEOUT_ERROR
@@ -44,16 +45,17 @@ typedef struct Motor_Tag {
 
 	struct {
 		uint16_t changeTime;
-		uint16_t stepLeft;
+		int stepLeft;
 		uint16_t pulse;
 	} counter;
 
 	struct {
 		uint8_t points_num;
 		uint8_t motor_num;
-		int stepSize;
+		float stepSize;
 		uint8_t microstep;
 		int positionStart;
+		int positionEnd;
 	} device;
 
 	struct {
@@ -71,6 +73,7 @@ MotorErr Motor_MicroPinSet(Motor_T *sett);
 MotorErr motorRun(Motor_T *sett);
 MotorErr motorStartMove(Motor_T *sett);
 MotorErr motorStop(Motor_T *sett);
+void prepareMotor(Motor_T *sett);
 /* GET FLAGS VALUES */
 bool Get_IsOn(Motor_T *sett);
 bool Get_Dir(Motor_T *sett);

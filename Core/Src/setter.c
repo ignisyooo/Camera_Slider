@@ -7,11 +7,15 @@
 #include "setter.h"
 #include <math.h>
 
+static uint8_t stoppingPoint;
+uint16_t time;
+
 MotorErr set(Motor_T *sett) {
 	MotorErr retVal = MOTOR_OK;
-	if(sett->device.points_num == -1)
+	if(sett->device.points_num == (uint8_t)-1)
 		sett->device.points_num = get_amount_of_times(sett->fifo);
-	uint16_t time = read_data(&(sett->fifo));
+	stoppingPoint = sett->device.points_num;
+	time = read_data(&(sett->fifo));
 	if(time == 0)
 	{
 		return MOTOR_ERROR;
@@ -19,18 +23,38 @@ MotorErr set(Motor_T *sett) {
 	uint16_t length = round(SLIDER_LENGHT / sett->device.points_num);
 	int stepSize = sett->device.stepSize;
 	sett->counter.stepLeft = set_stepLeft(length, stepSize);
-	sett->counter.changeTime = sett->counter.stepLeft;
-	sett->counter.pulse = set_pulse(time, set_stepLeft(length, stepSize), length, stepSize);
+	//int (*fun)(uint16_t, int) = &set_stepLeft;
+	int stepLeftx2 = sett->counter.stepLeft;
+	sett->counter.pulse = set_pulse(time, stepLeftx2);
+	sett->counter.changeTime = sett->counter.pulse;
 
 	return retVal;
 }
-uint16_t set_stepLeft(uint16_t len, int step)
+MotorErr set_for_angle(Motor_T *sett)
 {
-	return round((2*len*10)/step);
+	MotorErr retVal = MOTOR_OK;
+	if(sett->device.points_num == (uint8_t)-1)
+		sett->device.points_num = stoppingPoint;
+	if(sett->device.positionStart != 0 && sett->counter.pulse==0)
+		prepareMotor(sett);
+	if(time==0)
+		return MOTOR_ERROR;
+	uint16_t diff = abs(sett->device.positionEnd-sett->device.positionStart);
+	int stepSize =sett->device.stepSize;
+	sett->counter.stepLeft = set_stepLeft(diff/stoppingPoint, stepSize);
+	int stepLeftx2 = sett->counter.stepLeft;
+	sett->counter.pulse = set_pulse(time, stepLeftx2);
+	sett->counter.changeTime = sett->counter.pulse;
+
+	return retVal;
 }
-uint16_t set_pulse(uint16_t time, uint16_t (*fun)(uint16_t len, int step), uint16_t len, int step)
+int set_stepLeft(uint16_t len, int step)
 {
-	return round((TIM_FREQ/fun(len, step))*time);
+	return ceil((2*len)/step);
+}
+uint16_t set_pulse(uint16_t time, int stepleft)
+{
+	return ceil(TIM_FREQ*time)/stepleft;
 }
 
 

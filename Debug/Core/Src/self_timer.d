@@ -1,4 +1,5 @@
-Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
+Core/Src/self_timer.o: ../Core/Src/self_timer.c ../Core/Inc/self_timer.h \
+ ../Core/Inc/tim.h ../Core/Inc/main.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h \
  ../Core/Inc/stm32f3xx_hal_conf.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h \
@@ -28,10 +29,11 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h \
- ../Core/Inc/tim.h ../Core/Inc/main.h ../Core/Inc/usart.h \
- ../Core/Inc/gpio.h ../Core/Inc/setter.h ../Core/Inc/Objects.h \
- ../Core/Inc/motor.h ../Core/Inc/FIFO.h ../Core/Inc/tim.h \
- ../Core/Inc/Interrupt.h ../Core/Inc/self_timer.h
+ ../Core/Inc/Objects.h ../Core/Inc/motor.h ../Core/Inc/FIFO.h
+
+../Core/Inc/self_timer.h:
+
+../Core/Inc/tim.h:
 
 ../Core/Inc/main.h:
 
@@ -93,24 +95,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h:
 
-../Core/Inc/tim.h:
-
-../Core/Inc/main.h:
-
-../Core/Inc/usart.h:
-
-../Core/Inc/gpio.h:
-
-../Core/Inc/setter.h:
-
 ../Core/Inc/Objects.h:
 
 ../Core/Inc/motor.h:
 
 ../Core/Inc/FIFO.h:
-
-../Core/Inc/tim.h:
-
-../Core/Inc/Interrupt.h:
-
-../Core/Inc/self_timer.h:

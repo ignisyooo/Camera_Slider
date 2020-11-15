@@ -30,7 +30,7 @@ Core/Src/Interrupt.o: ../Core/Src/Interrupt.c ../Core/Inc/Interrupt.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h \
  ../Core/Inc/main.h ../Core/Inc/FIFO.h ../Core/Inc/tim.h \
- ../Core/Inc/main.h
+ ../Core/Inc/self_timer.h ../Core/Inc/Objects.h ../Core/Inc/main.h
 
 ../Core/Inc/Interrupt.h:
 
@@ -101,5 +101,9 @@ Core/Src/Interrupt.o: ../Core/Src/Interrupt.c ../Core/Inc/Interrupt.h \
 ../Core/Inc/FIFO.h:
 
 ../Core/Inc/tim.h:
+
+../Core/Inc/self_timer.h:
+
+../Core/Inc/Objects.h:
 
 ../Core/Inc/main.h:
