@@ -9,8 +9,11 @@
 #include "Objects.h"
 #include "self_timer.h"
 #include "main.h"
+#include "parametr.h"
 
 MotorErr retval = MOTOR_OK;
+
+DataReadEnum DataRead = data_unavailable;
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 	if (htim->Instance == TIM6) {
@@ -54,5 +57,17 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
 		for (int i = 0; i < MOTORS_NUM; i++) {
 			//motorStop(Motor_set + i);
 		}
+	}
+}
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+	if (huart->Instance == USART3) {
+		static int idx=1;
+		HAL_UART_Receive_IT(&huart3, (uint16_t*) (data+idx), 2);
+		idx++;
+		if((uint16_t)-2 == data[idx])
+			DataRead = data_available;
+		else
+			DataRead= data_unavailable;
 	}
 }

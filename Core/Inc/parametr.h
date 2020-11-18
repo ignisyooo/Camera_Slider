@@ -9,14 +9,20 @@
 
 #include "Objects.h"
 #include "main.h"
+#include "FIFO.h"
 #include "usart.h"
 
+#define UARTpoint 20
 
 typedef HAL_StatusTypeDef ErrUart;
 
-uint8_t points[MOTORS_NUM], data[MAX_POINTS];
+volatile uint16_t data[UARTpoint];
 
+typedef enum
+{
+	data_available,
+	data_unavailable
+}DataReadEnum;
 
-ErrUart Uart_readData(Motor_T *sett);
-ErrUart Uart_write_data_to_Motor_T(Motor_T *sett, ErrUart ret, uint8_t points, uint8_t speed, int idx);
+void UART_WriteData(Motor_T **data, uint16_t *tab, Trigger_T *time);
 #endif /* INC_PARAMETR_H_ */

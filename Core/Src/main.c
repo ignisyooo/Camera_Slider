@@ -28,7 +28,7 @@
 #include "setter.h"
 #include "Interrupt.h"
 #include "self_timer.h"
-//#include "motor.h"
+#include "parametr.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -97,17 +97,12 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
 	add_motors(Motor_set);
-	write_data_to_FIFO(&(Motor_set[0].fifo), 20);
-	write_data_to_FIFO(&(Motor_set[0].fifo), 12);
-	write_data_to_FIFO(&(Motor_set[0].fifo), 30);
-	write_data_to_FIFO(&(Motor_set[0].fifo), 10);
 	init_t(&timer_T, Motor_set);
-	Motor_set[1].device.positionStart= -170;
-	Motor_set[1].device.positionEnd = 300;
-	Motor_set[2].device.positionStart = -170;
-	Motor_set[2].device.positionEnd = 300;
-
-
+	HAL_UART_Receive_IT(&huart3, (uint16_t*) data, 2);
+	while(data_unavailable == DataRead);
+		//Waiting for data
+	UART_WriteData(Motor_set,data, &timer_T);
+	init_t(&timer_T, Motor_set);
 	for (int i = 0; i < MOTORS_NUM; i++) {
 		Motor_Init(Motor_set+i);
 		if(i==0)

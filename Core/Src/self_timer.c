@@ -41,9 +41,7 @@ void set_trigger(Trigger_T *trig, Motor_T *sett) {
 }
 
 void init_t(Trigger_T *trig, Motor_T *sett) {
-	trig->device = 0;
 	device_choose(trig);
-	trig->period = 2;
 	set_trigger(trig, sett);
 	trig->isOn = 1;
 }

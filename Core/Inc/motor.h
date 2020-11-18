@@ -6,6 +6,7 @@
 #include "FIFO.h"
 #include <math.h>
 #include <stdbool.h>
+#include <stdint.h>
 
 #define MOTORS_NUM 3
 #define MAX_POINTS 5
@@ -15,6 +16,8 @@
 #define CW 1
 #define CWC 0
 #define SLIDER_LENGHT 9000 //x*0.1 [mm]
+
+typedef sint int16_t;
 
 typedef enum MotorErr_Tag {
 	MOTOR_OK, MOTOR_ERROR, MOTOR_INTERRUPT_ERROR, MOTOR_TIMEOUT_ERROR
@@ -54,8 +57,8 @@ typedef struct Motor_Tag {
 		uint8_t motor_num;
 		float stepSize;
 		uint8_t microstep;
-		int positionStart;
-		int positionEnd;
+		int16_t positionStart;
+		int16_t positionEnd;
 	} device;
 
 	struct {

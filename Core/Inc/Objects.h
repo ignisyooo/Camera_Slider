@@ -13,6 +13,7 @@
 
 void add_motors(Motor_T *sett);
 
+
 Motor_T Motor_set[MOTORS_NUM];
 
 MotorErr Err_Mode;
