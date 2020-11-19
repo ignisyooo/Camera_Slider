@@ -17,7 +17,6 @@
 #define CWC 0
 #define SLIDER_LENGHT 9000 //x*0.1 [mm]
 
-typedef sint int16_t;
 
 typedef enum MotorErr_Tag {
 	MOTOR_OK, MOTOR_ERROR, MOTOR_INTERRUPT_ERROR, MOTOR_TIMEOUT_ERROR

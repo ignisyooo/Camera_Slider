@@ -11,8 +11,9 @@
 #include "main.h"
 #include "FIFO.h"
 #include "usart.h"
+#include "self_timer.h"
 
-#define UARTpoint 20
+#define UARTpoint 15
 
 typedef HAL_StatusTypeDef ErrUart;
 
@@ -24,5 +25,8 @@ typedef enum
 	data_unavailable
 }DataReadEnum;
 
-void UART_WriteData(Motor_T **data, uint16_t *tab, Trigger_T *time);
+
+void UART_WriteData(Motor_T *data, uint16_t *tab, Trigger_T *time);
+void UART_Confirm(void);
+DataReadEnum DataReceive(uint16_t *data);
 #endif /* INC_PARAMETR_H_ */

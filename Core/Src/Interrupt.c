@@ -65,9 +65,5 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
 		static int idx=1;
 		HAL_UART_Receive_IT(&huart3, (uint16_t*) (data+idx), 2);
 		idx++;
-		if((uint16_t)-2 == data[idx])
-			DataRead = data_available;
-		else
-			DataRead= data_unavailable;
 	}
 }

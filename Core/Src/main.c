@@ -50,6 +50,7 @@
 /* USER CODE BEGIN PV */
 extern Motor_T Motor_set[MOTORS_NUM];
 extern Trigger_T timer_T;
+extern DataReadEnum DataRead;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -97,25 +98,25 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
 	add_motors(Motor_set);
-	init_t(&timer_T, Motor_set);
 	HAL_UART_Receive_IT(&huart3, (uint16_t*) data, 2);
-	while(data_unavailable == DataRead);
-		//Waiting for data
-	UART_WriteData(Motor_set,data, &timer_T);
+	while (data_unavailable == DataRead)
+		DataRead = DataReceive(data);
+	//Waiting for data
+	UART_WriteData(Motor_set, data, &timer_T);
 	init_t(&timer_T, Motor_set);
 	for (int i = 0; i < MOTORS_NUM; i++) {
-		Motor_Init(Motor_set+i);
-		if(i==0)
+		Motor_Init(Motor_set + i);
+		if (i == 0)
 			set(Motor_set);
 		else
-			set_for_angle(Motor_set+i);
-
+			set_for_angle(Motor_set + i);
 	}
 	motorStartMove(Motor_set);
 	motorStartMove(&Motor_set[1]);
 	motorStartMove(&Motor_set[2]);
 	HAL_TIM_Base_Start_IT(&htim6);
 	HAL_TIM_Base_Start_IT(&htim7);
+
 
   /* USER CODE END 2 */
 

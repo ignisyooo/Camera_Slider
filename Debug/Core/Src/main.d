@@ -31,7 +31,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Inc/tim.h ../Core/Inc/main.h ../Core/Inc/usart.h \
  ../Core/Inc/gpio.h ../Core/Inc/setter.h ../Core/Inc/Objects.h \
  ../Core/Inc/motor.h ../Core/Inc/FIFO.h ../Core/Inc/tim.h \
- ../Core/Inc/Interrupt.h ../Core/Inc/self_timer.h
+ ../Core/Inc/Interrupt.h ../Core/Inc/self_timer.h ../Core/Inc/parametr.h \
+ ../Core/Inc/usart.h ../Core/Inc/self_timer.h
 
 ../Core/Inc/main.h:
 
@@ -112,5 +113,11 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Inc/tim.h:
 
 ../Core/Inc/Interrupt.h:
+
+../Core/Inc/self_timer.h:
+
+../Core/Inc/parametr.h:
+
+../Core/Inc/usart.h:
 
 ../Core/Inc/self_timer.h:

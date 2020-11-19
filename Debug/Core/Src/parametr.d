@@ -1,4 +1,5 @@
-Core/Src/parametr.o: ../Core/Src/parametr.c ../Core/Inc/main.h \
+Core/Src/parametr.o: ../Core/Src/parametr.c ../Core/Inc/parametr.h \
+ ../Core/Inc/Objects.h ../Core/Inc/motor.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h \
  ../Core/Inc/stm32f3xx_hal_conf.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_rcc.h \
@@ -28,11 +29,14 @@ Core/Src/parametr.o: ../Core/Src/parametr.c ../Core/Inc/main.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_tim_ex.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart.h \
  ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h \
- ../Core/Inc/parametr.h ../Core/Inc/Objects.h ../Core/Inc/motor.h \
  ../Core/Inc/main.h ../Core/Inc/FIFO.h ../Core/Inc/tim.h \
- ../Core/Inc/usart.h
+ ../Core/Inc/usart.h ../Core/Inc/self_timer.h
 
-../Core/Inc/main.h:
+../Core/Inc/parametr.h:
+
+../Core/Inc/Objects.h:
+
+../Core/Inc/motor.h:
 
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal.h:
 
@@ -92,12 +96,6 @@ Core/Src/parametr.o: ../Core/Src/parametr.c ../Core/Inc/main.h \
 
 ../Drivers/STM32F3xx_HAL_Driver/Inc/stm32f3xx_hal_uart_ex.h:
 
-../Core/Inc/parametr.h:
-
-../Core/Inc/Objects.h:
-
-../Core/Inc/motor.h:
-
 ../Core/Inc/main.h:
 
 ../Core/Inc/FIFO.h:
@@ -105,3 +103,5 @@ Core/Src/parametr.o: ../Core/Src/parametr.c ../Core/Inc/main.h \
 ../Core/Inc/tim.h:
 
 ../Core/Inc/usart.h:
+
+../Core/Inc/self_timer.h:
