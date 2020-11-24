@@ -114,8 +114,11 @@ int main(void)
 	motorStartMove(Motor_set);
 	motorStartMove(&Motor_set[1]);
 	motorStartMove(&Motor_set[2]);
+	while(data_confirm != DataRead)
+		DataRead = DataReceive(data);
 	HAL_TIM_Base_Start_IT(&htim6);
 	HAL_TIM_Base_Start_IT(&htim7);
+	UART_startmove();
 
 
   /* USER CODE END 2 */
@@ -123,8 +126,13 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 	while (1) {
+		if(data_stop == DataReceive(data))
+		{
+			for(int i=0;i<MOTORS_NUM;++i)
+				motorStop(Motor_set+i);
+			HAL_TIM_Base_Stop_IT(&htim7);
+		}
     /* USER CODE END WHILE */
-
     /* USER CODE BEGIN 3 */
 	}
   /* USER CODE END 3 */
