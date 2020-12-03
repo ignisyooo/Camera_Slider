@@ -1,4 +1,4 @@
 setter.c:13:10:set	40	static
-setter.c:33:10:set_for_angle	32	static
-setter.c:51:5:set_stepLeft	24	static
-setter.c:55:10:set_pulse	24	static
+setter.c:34:10:set_for_angle	32	static
+setter.c:53:5:set_stepLeft	24	static
+setter.c:57:10:set_pulse	24	static

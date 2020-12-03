@@ -14,6 +14,7 @@ typedef struct Fifo_data_Tag
 {
 	struct Fifo_data_Tag *next;
 	uint16_t time;
+	uint16_t length;
 }Fifo_data;
 
 
