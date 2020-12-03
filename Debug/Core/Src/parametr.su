@@ -1,4 +1,4 @@
-parametr.c:13:6:UART_Confirm	8	static
-parametr.c:21:6:UART_startmove	8	static
-parametr.c:28:6:UART_WriteData	32	static
-parametr.c:44:14:DataReceive	24	static
+parametr.c:12:6:UART_Confirm	8	static
+parametr.c:19:6:UART_startmove	8	static
+parametr.c:26:6:UART_WriteData	32	static
+parametr.c:41:14:DataReceive	24	static

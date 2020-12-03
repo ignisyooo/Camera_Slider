@@ -21,22 +21,23 @@ uint8_t get_amount_of_times(Fifo_data *data) {
 	return size;
 }
 
-uint16_t read_data(Fifo_data **data) {
+void read_data(Fifo_data **data, uint16_t *a, uint16_t *b) {
 	uint16_t retVal;
 	if (*data == NULL) {
-		return -1;
+		*a=-1;
+		*b=-1;
 	} else {
 		Fifo_data *new = NULL;
-		retVal = (*data)->time;
+		*a = (*data)->time;
+		*b= (*data)->length;
 		new = (*data)->next;
 		free(*data);
 		(*data) = new;
-		return retVal;
 	}
 }
 
 // Temporary function
-Fifo_data *getLast(Fifo_data *data)
+static Fifo_data *getLast(Fifo_data *data)
 {
 	if(data)
 	{
@@ -45,7 +46,7 @@ Fifo_data *getLast(Fifo_data *data)
 	}
 	return data;
 }
-void write_data_to_FIFO(Fifo_data **data, uint16_t val)
+void write_data_to_FIFO(Fifo_data **data, uint16_t val, uint16_t len)
 {
 	if(*data)
 	{
@@ -53,12 +54,14 @@ void write_data_to_FIFO(Fifo_data **data, uint16_t val)
 		current->next=(Fifo_data *)malloc(sizeof(Fifo_data));
 		current->next->next = NULL;
 		current->next->time= val;
+		current->next->length=len;
 	}
 	else
 	{
 		(*data)=(Fifo_data*)malloc(sizeof(Fifo_data));
 		(*data)->next=NULL;
 		(*data)->time=val;
+		(*data)->length=len;
 	}
 }
 int read_time(Fifo_data *data)

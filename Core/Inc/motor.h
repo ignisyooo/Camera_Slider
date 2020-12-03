@@ -22,7 +22,7 @@ typedef enum MotorErr_Tag {
 	MOTOR_OK, MOTOR_ERROR, MOTOR_INTERRUPT_ERROR, MOTOR_TIMEOUT_ERROR
 } MotorErr;
 
-/*For now we use only 1 microstep*/
+
 typedef struct {
 	GPIO_TypeDef *PORT;
 	uint16_t PIN;

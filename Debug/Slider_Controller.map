@@ -4158,91 +4158,90 @@ LOAD c:/st/stm32cubeide_1.4.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000008000b40       0x38 Core/Src/FIFO.o
                 0x0000000008000b40                get_amount_of_times
  .text.read_data
-                0x0000000008000b78       0x44 Core/Src/FIFO.o
+                0x0000000008000b78       0x5e Core/Src/FIFO.o
                 0x0000000008000b78                read_data
- .text.getLast  0x0000000008000bbc       0x2c Core/Src/FIFO.o
-                0x0000000008000bbc                getLast
+ .text.getLast  0x0000000008000bd6       0x2c Core/Src/FIFO.o
  .text.write_data_to_FIFO
-                0x0000000008000be8       0x66 Core/Src/FIFO.o
-                0x0000000008000be8                write_data_to_FIFO
+                0x0000000008000c02       0x7a Core/Src/FIFO.o
+                0x0000000008000c02                write_data_to_FIFO
  .text.read_time
-                0x0000000008000c4e       0x3c Core/Src/FIFO.o
-                0x0000000008000c4e                read_time
- *fill*         0x0000000008000c8a        0x2 
+                0x0000000008000c7c       0x3c Core/Src/FIFO.o
+                0x0000000008000c7c                read_time
  .text.HAL_TIM_PeriodElapsedCallback
-                0x0000000008000c8c      0x114 Core/Src/Interrupt.o
-                0x0000000008000c8c                HAL_TIM_PeriodElapsedCallback
+                0x0000000008000cb8      0x114 Core/Src/Interrupt.o
+                0x0000000008000cb8                HAL_TIM_PeriodElapsedCallback
  .text.HAL_UART_RxCpltCallback
-                0x0000000008000da0       0x48 Core/Src/Interrupt.o
-                0x0000000008000da0                HAL_UART_RxCpltCallback
+                0x0000000008000dcc       0x48 Core/Src/Interrupt.o
+                0x0000000008000dcc                HAL_UART_RxCpltCallback
  .text.add_motors
-                0x0000000008000de8       0x50 Core/Src/Objects.o
-                0x0000000008000de8                add_motors
+                0x0000000008000e14       0x50 Core/Src/Objects.o
+                0x0000000008000e14                add_motors
  .text.MX_GPIO_Init
-                0x0000000008000e38      0x178 Core/Src/gpio.o
-                0x0000000008000e38                MX_GPIO_Init
- .text.main     0x0000000008000fb0      0x140 Core/Src/main.o
-                0x0000000008000fb0                main
+                0x0000000008000e64      0x178 Core/Src/gpio.o
+                0x0000000008000e64                MX_GPIO_Init
+ .text.main     0x0000000008000fdc      0x140 Core/Src/main.o
+                0x0000000008000fdc                main
  .text.SystemClock_Config
-                0x00000000080010f0       0xbc Core/Src/main.o
-                0x00000000080010f0                SystemClock_Config
+                0x000000000800111c       0xbc Core/Src/main.o
+                0x000000000800111c                SystemClock_Config
  .text.Error_Handler
-                0x00000000080011ac        0xe Core/Src/main.o
-                0x00000000080011ac                Error_Handler
+                0x00000000080011d8        0xe Core/Src/main.o
+                0x00000000080011d8                Error_Handler
  .text.Motor_PinMode
-                0x00000000080011ba       0x90 Core/Src/motor.o
-                0x00000000080011ba                Motor_PinMode
- *fill*         0x000000000800124a        0x2 
+                0x00000000080011e6       0x90 Core/Src/motor.o
+                0x00000000080011e6                Motor_PinMode
+ *fill*         0x0000000008001276        0x2 
  .text.Motor_MicroPinSet
-                0x000000000800124c      0x13c Core/Src/motor.o
-                0x000000000800124c                Motor_MicroPinSet
+                0x0000000008001278      0x13c Core/Src/motor.o
+                0x0000000008001278                Motor_MicroPinSet
  .text.Motor_Init
-                0x0000000008001388       0x86 Core/Src/motor.o
-                0x0000000008001388                Motor_Init
+                0x00000000080013b4       0x86 Core/Src/motor.o
+                0x00000000080013b4                Motor_Init
  .text.motorStop
-                0x000000000800140e       0x5a Core/Src/motor.o
-                0x000000000800140e                motorStop
+                0x000000000800143a       0x5a Core/Src/motor.o
+                0x000000000800143a                motorStop
  .text.motorRun
-                0x0000000008001468      0x132 Core/Src/motor.o
-                0x0000000008001468                motorRun
+                0x0000000008001494      0x132 Core/Src/motor.o
+                0x0000000008001494                motorRun
  .text.motorStartMove
-                0x000000000800159a       0x72 Core/Src/motor.o
-                0x000000000800159a                motorStartMove
+                0x00000000080015c6       0x72 Core/Src/motor.o
+                0x00000000080015c6                motorStartMove
  .text.prepareMotor
-                0x000000000800160c      0x122 Core/Src/motor.o
-                0x000000000800160c                prepareMotor
- *fill*         0x000000000800172e        0x2 
+                0x0000000008001638      0x122 Core/Src/motor.o
+                0x0000000008001638                prepareMotor
+ *fill*         0x000000000800175a        0x2 
  .text.UART_Confirm
-                0x0000000008001730       0x3c Core/Src/parametr.o
-                0x0000000008001730                UART_Confirm
+                0x000000000800175c       0x3c Core/Src/parametr.o
+                0x000000000800175c                UART_Confirm
  .text.UART_startmove
-                0x000000000800176c       0x40 Core/Src/parametr.o
-                0x000000000800176c                UART_startmove
+                0x0000000008001798       0x40 Core/Src/parametr.o
+                0x0000000008001798                UART_startmove
  .text.UART_WriteData
-                0x00000000080017ac       0xea Core/Src/parametr.o
-                0x00000000080017ac                UART_WriteData
+                0x00000000080017d8       0xac Core/Src/parametr.o
+                0x00000000080017d8                UART_WriteData
  .text.DataReceive
-                0x0000000008001896       0x72 Core/Src/parametr.o
-                0x0000000008001896                DataReceive
+                0x0000000008001884       0x72 Core/Src/parametr.o
+                0x0000000008001884                DataReceive
  .text.device_choose
-                0x0000000008001908       0x2e Core/Src/self_timer.o
-                0x0000000008001908                device_choose
+                0x00000000080018f6       0x2e Core/Src/self_timer.o
+                0x00000000080018f6                device_choose
  .text.calculate_intterupts
-                0x0000000008001936       0x22 Core/Src/self_timer.o
-                0x0000000008001936                calculate_intterupts
+                0x0000000008001924       0x22 Core/Src/self_timer.o
+                0x0000000008001924                calculate_intterupts
+ *fill*         0x0000000008001946        0x2 
  .text.run_trigger
-                0x0000000008001958       0x90 Core/Src/self_timer.o
-                0x0000000008001958                run_trigger
+                0x0000000008001948       0x90 Core/Src/self_timer.o
+                0x0000000008001948                run_trigger
  .text.set_trigger
-                0x00000000080019e8       0x3e Core/Src/self_timer.o
-                0x00000000080019e8                set_trigger
- .text.init_t   0x0000000008001a26       0x26 Core/Src/self_timer.o
-                0x0000000008001a26                init_t
- .text.set      0x0000000008001a4c       0xdc Core/Src/setter.o
-                0x0000000008001a4c                set
+                0x00000000080019d8       0x3e Core/Src/self_timer.o
+                0x00000000080019d8                set_trigger
+ .text.init_t   0x0000000008001a16       0x26 Core/Src/self_timer.o
+                0x0000000008001a16                init_t
+ .text.set      0x0000000008001a3c       0xd8 Core/Src/setter.o
+                0x0000000008001a3c                set
  .text.set_for_angle
-                0x0000000008001b28       0xcc Core/Src/setter.o
-                0x0000000008001b28                set_for_angle
+                0x0000000008001b14       0xe0 Core/Src/setter.o
+                0x0000000008001b14                set_for_angle
  .text.set_stepLeft
                 0x0000000008001bf4       0x32 Core/Src/setter.o
                 0x0000000008001bf4                set_stepLeft
@@ -4702,10 +4701,10 @@ LOAD c:/st/stm32cubeide_1.4.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .data.DataRead
                 0x0000000020000000        0x1 Core/Src/Interrupt.o
                 0x0000000020000000                DataRead
- .data.state.9056
+ .data.state.9060
                 0x0000000020000001        0x1 Core/Src/Interrupt.o
  *fill*         0x0000000020000002        0x2 
- .data.idx.9067
+ .data.idx.9071
                 0x0000000020000004        0x4 Core/Src/Interrupt.o
  .data.motor1   0x0000000020000008       0x70 Core/Src/Objects.o
                 0x0000000020000008                motor1
@@ -4923,61 +4922,61 @@ LOAD c:/st/stm32cubeide_1.4.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000000000b80       0x22 c:/st/stm32cubeide_1.4.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.5.0.202011040924/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtn.o
 OUTPUT(Slider_Controller.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000    0x1686a
- .debug_info    0x0000000000000000      0xa2a Core/Src/FIFO.o
- .debug_info    0x0000000000000a2a     0x1768 Core/Src/Interrupt.o
- .debug_info    0x0000000000002192     0x1256 Core/Src/Objects.o
- .debug_info    0x00000000000033e8      0x407 Core/Src/gpio.o
- .debug_info    0x00000000000037ef     0x1910 Core/Src/main.o
- .debug_info    0x00000000000050ff      0xf10 Core/Src/motor.o
- .debug_info    0x000000000000600f     0x16ce Core/Src/parametr.o
- .debug_info    0x00000000000076dd     0x136e Core/Src/self_timer.o
- .debug_info    0x0000000000008a4b     0x1363 Core/Src/setter.o
- .debug_info    0x0000000000009dae      0x278 Core/Src/stm32f3xx_hal_msp.o
- .debug_info    0x000000000000a026      0xa0e Core/Src/stm32f3xx_it.o
- .debug_info    0x000000000000aa34      0x985 Core/Src/sysmem.o
- .debug_info    0x000000000000b3b9      0x45c Core/Src/system_stm32f3xx.o
- .debug_info    0x000000000000b815      0xa36 Core/Src/tim.o
- .debug_info    0x000000000000c24b      0xb16 Core/Src/usart.o
- .debug_info    0x000000000000cd61       0x22 Core/Startup/startup_stm32f303retx.o
- .debug_info    0x000000000000cd83      0x812 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.o
- .debug_info    0x000000000000d595      0xdc9 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.o
- .debug_info    0x000000000000e35e      0x7cb Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.o
- .debug_info    0x000000000000eb29      0x7c1 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.o
- .debug_info    0x000000000000f2ea     0x181f Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.o
- .debug_info    0x0000000000010b09      0x712 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.o
- .debug_info    0x000000000001121b     0x2648 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.o
- .debug_info    0x0000000000013863     0x11d7 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.o
- .debug_info    0x0000000000014a3a     0x1592 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.o
- .debug_info    0x0000000000015fcc      0x89e Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart_ex.o
+.debug_info     0x0000000000000000    0x16913
+ .debug_info    0x0000000000000000      0xa5b Core/Src/FIFO.o
+ .debug_info    0x0000000000000a5b     0x1774 Core/Src/Interrupt.o
+ .debug_info    0x00000000000021cf     0x1262 Core/Src/Objects.o
+ .debug_info    0x0000000000003431      0x407 Core/Src/gpio.o
+ .debug_info    0x0000000000003838     0x191c Core/Src/main.o
+ .debug_info    0x0000000000005154      0xf1c Core/Src/motor.o
+ .debug_info    0x0000000000006070     0x16f0 Core/Src/parametr.o
+ .debug_info    0x0000000000007760     0x137a Core/Src/self_timer.o
+ .debug_info    0x0000000000008ada     0x137d Core/Src/setter.o
+ .debug_info    0x0000000000009e57      0x278 Core/Src/stm32f3xx_hal_msp.o
+ .debug_info    0x000000000000a0cf      0xa0e Core/Src/stm32f3xx_it.o
+ .debug_info    0x000000000000aadd      0x985 Core/Src/sysmem.o
+ .debug_info    0x000000000000b462      0x45c Core/Src/system_stm32f3xx.o
+ .debug_info    0x000000000000b8be      0xa36 Core/Src/tim.o
+ .debug_info    0x000000000000c2f4      0xb16 Core/Src/usart.o
+ .debug_info    0x000000000000ce0a       0x22 Core/Startup/startup_stm32f303retx.o
+ .debug_info    0x000000000000ce2c      0x812 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.o
+ .debug_info    0x000000000000d63e      0xdc9 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.o
+ .debug_info    0x000000000000e407      0x7cb Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.o
+ .debug_info    0x000000000000ebd2      0x7c1 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.o
+ .debug_info    0x000000000000f393     0x181f Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.o
+ .debug_info    0x0000000000010bb2      0x712 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.o
+ .debug_info    0x00000000000112c4     0x2648 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.o
+ .debug_info    0x000000000001390c     0x11d7 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.o
+ .debug_info    0x0000000000014ae3     0x1592 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.o
+ .debug_info    0x0000000000016075      0x89e Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart_ex.o
 
-.debug_abbrev   0x0000000000000000     0x324d
- .debug_abbrev  0x0000000000000000      0x20d Core/Src/FIFO.o
- .debug_abbrev  0x000000000000020d      0x29d Core/Src/Interrupt.o
- .debug_abbrev  0x00000000000004aa      0x219 Core/Src/Objects.o
- .debug_abbrev  0x00000000000006c3      0x134 Core/Src/gpio.o
- .debug_abbrev  0x00000000000007f7      0x27f Core/Src/main.o
- .debug_abbrev  0x0000000000000a76      0x286 Core/Src/motor.o
- .debug_abbrev  0x0000000000000cfc      0x294 Core/Src/parametr.o
- .debug_abbrev  0x0000000000000f90      0x278 Core/Src/self_timer.o
- .debug_abbrev  0x0000000000001208      0x26b Core/Src/setter.o
- .debug_abbrev  0x0000000000001473      0x109 Core/Src/stm32f3xx_hal_msp.o
- .debug_abbrev  0x000000000000157c      0x15a Core/Src/stm32f3xx_it.o
- .debug_abbrev  0x00000000000016d6      0x19b Core/Src/sysmem.o
- .debug_abbrev  0x0000000000001871      0x12b Core/Src/system_stm32f3xx.o
- .debug_abbrev  0x000000000000199c      0x1a4 Core/Src/tim.o
- .debug_abbrev  0x0000000000001b40      0x1a2 Core/Src/usart.o
- .debug_abbrev  0x0000000000001ce2       0x12 Core/Startup/startup_stm32f303retx.o
- .debug_abbrev  0x0000000000001cf4      0x1c7 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.o
- .debug_abbrev  0x0000000000001ebb      0x2fa Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.o
- .debug_abbrev  0x00000000000021b5      0x1fe Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.o
- .debug_abbrev  0x00000000000023b3      0x1c0 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.o
- .debug_abbrev  0x0000000000002573      0x28c Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.o
- .debug_abbrev  0x00000000000027ff      0x219 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.o
- .debug_abbrev  0x0000000000002a18      0x230 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.o
- .debug_abbrev  0x0000000000002c48      0x21e Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.o
- .debug_abbrev  0x0000000000002e66      0x205 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.o
- .debug_abbrev  0x000000000000306b      0x1e2 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart_ex.o
+.debug_abbrev   0x0000000000000000     0x3267
+ .debug_abbrev  0x0000000000000000      0x218 Core/Src/FIFO.o
+ .debug_abbrev  0x0000000000000218      0x29d Core/Src/Interrupt.o
+ .debug_abbrev  0x00000000000004b5      0x219 Core/Src/Objects.o
+ .debug_abbrev  0x00000000000006ce      0x134 Core/Src/gpio.o
+ .debug_abbrev  0x0000000000000802      0x27f Core/Src/main.o
+ .debug_abbrev  0x0000000000000a81      0x286 Core/Src/motor.o
+ .debug_abbrev  0x0000000000000d07      0x294 Core/Src/parametr.o
+ .debug_abbrev  0x0000000000000f9b      0x278 Core/Src/self_timer.o
+ .debug_abbrev  0x0000000000001213      0x27a Core/Src/setter.o
+ .debug_abbrev  0x000000000000148d      0x109 Core/Src/stm32f3xx_hal_msp.o
+ .debug_abbrev  0x0000000000001596      0x15a Core/Src/stm32f3xx_it.o
+ .debug_abbrev  0x00000000000016f0      0x19b Core/Src/sysmem.o
+ .debug_abbrev  0x000000000000188b      0x12b Core/Src/system_stm32f3xx.o
+ .debug_abbrev  0x00000000000019b6      0x1a4 Core/Src/tim.o
+ .debug_abbrev  0x0000000000001b5a      0x1a2 Core/Src/usart.o
+ .debug_abbrev  0x0000000000001cfc       0x12 Core/Startup/startup_stm32f303retx.o
+ .debug_abbrev  0x0000000000001d0e      0x1c7 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.o
+ .debug_abbrev  0x0000000000001ed5      0x2fa Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.o
+ .debug_abbrev  0x00000000000021cf      0x1fe Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.o
+ .debug_abbrev  0x00000000000023cd      0x1c0 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.o
+ .debug_abbrev  0x000000000000258d      0x28c Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.o
+ .debug_abbrev  0x0000000000002819      0x219 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.o
+ .debug_abbrev  0x0000000000002a32      0x230 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.o
+ .debug_abbrev  0x0000000000002c62      0x21e Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.o
+ .debug_abbrev  0x0000000000002e80      0x205 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.o
+ .debug_abbrev  0x0000000000003085      0x1e2 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart_ex.o
 
 .debug_aranges  0x0000000000000000      0xe90
  .debug_aranges
@@ -5166,52 +5165,52 @@ OUTPUT(Slider_Controller.elf elf32-littlearm)
  .debug_macro   0x000000000001f637      0x1eb Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.o
  .debug_macro   0x000000000001f822      0x1ce Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart_ex.o
 
-.debug_line     0x0000000000000000     0xf059
- .debug_line    0x0000000000000000      0x602 Core/Src/FIFO.o
- .debug_line    0x0000000000000602      0x8bd Core/Src/Interrupt.o
- .debug_line    0x0000000000000ebf      0x806 Core/Src/Objects.o
- .debug_line    0x00000000000016c5      0x6c8 Core/Src/gpio.o
- .debug_line    0x0000000000001d8d      0x8c2 Core/Src/main.o
- .debug_line    0x000000000000264f      0x948 Core/Src/motor.o
- .debug_line    0x0000000000002f97      0x93b Core/Src/parametr.o
- .debug_line    0x00000000000038d2      0x885 Core/Src/self_timer.o
- .debug_line    0x0000000000004157      0x875 Core/Src/setter.o
- .debug_line    0x00000000000049cc      0x6ab Core/Src/stm32f3xx_hal_msp.o
- .debug_line    0x0000000000005077      0x785 Core/Src/stm32f3xx_it.o
- .debug_line    0x00000000000057fc      0x4c7 Core/Src/sysmem.o
- .debug_line    0x0000000000005cc3      0x6cb Core/Src/system_stm32f3xx.o
- .debug_line    0x000000000000638e      0x705 Core/Src/tim.o
- .debug_line    0x0000000000006a93      0x6e4 Core/Src/usart.o
- .debug_line    0x0000000000007177       0x85 Core/Startup/startup_stm32f303retx.o
- .debug_line    0x00000000000071fc      0x886 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.o
- .debug_line    0x0000000000007a82      0x9bb Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.o
- .debug_line    0x000000000000843d      0x8c5 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.o
- .debug_line    0x0000000000008d02      0x861 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.o
- .debug_line    0x0000000000009563      0xe01 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.o
- .debug_line    0x000000000000a364      0xa27 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.o
- .debug_line    0x000000000000ad8b     0x1be3 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.o
- .debug_line    0x000000000000c96e      0xd5b Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.o
- .debug_line    0x000000000000d6c9     0x11ec Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.o
- .debug_line    0x000000000000e8b5      0x7a4 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart_ex.o
+.debug_line     0x0000000000000000     0xf075
+ .debug_line    0x0000000000000000      0x60c Core/Src/FIFO.o
+ .debug_line    0x000000000000060c      0x8bd Core/Src/Interrupt.o
+ .debug_line    0x0000000000000ec9      0x806 Core/Src/Objects.o
+ .debug_line    0x00000000000016cf      0x6c8 Core/Src/gpio.o
+ .debug_line    0x0000000000001d97      0x8c2 Core/Src/main.o
+ .debug_line    0x0000000000002659      0x948 Core/Src/motor.o
+ .debug_line    0x0000000000002fa1      0x948 Core/Src/parametr.o
+ .debug_line    0x00000000000038e9      0x885 Core/Src/self_timer.o
+ .debug_line    0x000000000000416e      0x87a Core/Src/setter.o
+ .debug_line    0x00000000000049e8      0x6ab Core/Src/stm32f3xx_hal_msp.o
+ .debug_line    0x0000000000005093      0x785 Core/Src/stm32f3xx_it.o
+ .debug_line    0x0000000000005818      0x4c7 Core/Src/sysmem.o
+ .debug_line    0x0000000000005cdf      0x6cb Core/Src/system_stm32f3xx.o
+ .debug_line    0x00000000000063aa      0x705 Core/Src/tim.o
+ .debug_line    0x0000000000006aaf      0x6e4 Core/Src/usart.o
+ .debug_line    0x0000000000007193       0x85 Core/Startup/startup_stm32f303retx.o
+ .debug_line    0x0000000000007218      0x886 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal.o
+ .debug_line    0x0000000000007a9e      0x9bb Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_cortex.o
+ .debug_line    0x0000000000008459      0x8c5 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_dma.o
+ .debug_line    0x0000000000008d1e      0x861 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_gpio.o
+ .debug_line    0x000000000000957f      0xe01 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc.o
+ .debug_line    0x000000000000a380      0xa27 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_rcc_ex.o
+ .debug_line    0x000000000000ada7     0x1be3 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim.o
+ .debug_line    0x000000000000c98a      0xd5b Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_tim_ex.o
+ .debug_line    0x000000000000d6e5     0x11ec Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart.o
+ .debug_line    0x000000000000e8d1      0x7a4 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_uart_ex.o
 
 .debug_str      0x0000000000000000    0xb13e1
- .debug_str     0x0000000000000000     0x7f2b Core/Src/FIFO.o
-                                       0x81ab (size before relaxing)
- .debug_str     0x0000000000007f2b    0xa5607 Core/Src/Interrupt.o
-                                      0xac990 (size before relaxing)
- .debug_str     0x00000000000ad532       0x4b Core/Src/Objects.o
-                                      0xac64f (size before relaxing)
- .debug_str     0x00000000000ad57d       0xd8 Core/Src/gpio.o
+ .debug_str     0x0000000000000000     0x7f32 Core/Src/FIFO.o
+                                       0x81b2 (size before relaxing)
+ .debug_str     0x0000000000007f32    0xa5607 Core/Src/Interrupt.o
+                                      0xac997 (size before relaxing)
+ .debug_str     0x00000000000ad539       0x4b Core/Src/Objects.o
+                                      0xac656 (size before relaxing)
+ .debug_str     0x00000000000ad584       0xd8 Core/Src/gpio.o
                                       0xa88c9 (size before relaxing)
- .debug_str     0x00000000000ad655      0x346 Core/Src/main.o
-                                      0xacc55 (size before relaxing)
- .debug_str     0x00000000000ad99b       0xa2 Core/Src/motor.o
-                                      0xac2a6 (size before relaxing)
- .debug_str     0x00000000000ada3d       0x4e Core/Src/parametr.o
-                                      0xadb16 (size before relaxing)
- .debug_str     0x00000000000ada8b       0x6b Core/Src/self_timer.o
-                                      0xac6ed (size before relaxing)
- .debug_str     0x00000000000adaf6       0x5b Core/Src/setter.o
+ .debug_str     0x00000000000ad65c      0x346 Core/Src/main.o
+                                      0xacc5c (size before relaxing)
+ .debug_str     0x00000000000ad9a2       0xa2 Core/Src/motor.o
+                                      0xac2ad (size before relaxing)
+ .debug_str     0x00000000000ada44       0x4e Core/Src/parametr.o
+                                      0xadb1d (size before relaxing)
+ .debug_str     0x00000000000ada92       0x6b Core/Src/self_timer.o
+                                      0xac6f4 (size before relaxing)
+ .debug_str     0x00000000000adafd       0x54 Core/Src/setter.o
                                       0xac692 (size before relaxing)
  .debug_str     0x00000000000adb51       0x2c Core/Src/stm32f3xx_hal_msp.o
                                       0xa882c (size before relaxing)
