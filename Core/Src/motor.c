@@ -71,7 +71,7 @@ void Motor_Init(Motor_T *sett) {
 	sett->data.position = 0;
 	sett->device.points_num = -1;
 
-	sett->device.microstep = 1;
+	sett->device.microstep = 0;
 	Motor_PinMode(sett);
 	Motor_MicroPinSet(sett);
 }

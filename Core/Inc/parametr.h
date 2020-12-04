@@ -13,7 +13,7 @@
 #include "usart.h"
 #include "self_timer.h"
 
-#define UARTpoint 19
+#define UARTpoint 35
 
 typedef HAL_StatusTypeDef ErrUart;
 

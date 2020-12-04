@@ -96,7 +96,6 @@ int main(void)
   MX_USART3_UART_Init();
   MX_TIM7_Init();
   /* USER CODE BEGIN 2 */
-
 	add_motors(Motor_set);
 	HAL_UART_Receive_IT(&huart3, (uint16_t*) data, 2);
 	while (data_unavailable == DataRead)

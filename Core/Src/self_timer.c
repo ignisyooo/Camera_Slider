@@ -8,7 +8,7 @@
 int flaga = 0;
 void device_choose(Trigger_T *trig) {
 	trig->Pin_Trigger.PORT =
-			(1 == trig->device) ? CAMERA_T_GPIO_Port : MOBILE_T_GPIO_Port;
+			(0 == trig->device) ? CAMERA_T_GPIO_Port : MOBILE_T_GPIO_Port;
 	trig->Pin_Trigger.PIN = (1 == trig->device) ? CAMERA_T_Pin : MOBILE_T_Pin;
 }
 

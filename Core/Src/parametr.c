@@ -9,6 +9,8 @@
 #include <stdio.h>
 #include <stdint.h>
 
+
+
 void UART_Confirm(void) {
 	msg_size = 0;
 	msg_size = sprintf((char*) msg, "get");
@@ -25,9 +27,9 @@ void UART_startmove(void) {
 
 void UART_WriteData(Motor_T *data, uint16_t *tab, Trigger_T *time) {
 	uint8_t i = 0;
-	for (int i = 0; i < MOTORS_NUM; i++) {
+	for (int j = 0; j < MOTORS_NUM; j++) {
 		while ((uint16_t) -1 != tab[i]) {
-			write_data_to_FIFO(&((data+i)->fifo), tab[i], tab[++i]);
+			write_data_to_FIFO(&((data+j)->fifo), tab[i], tab[++i]);
 			i++;
 		}
 		i++;

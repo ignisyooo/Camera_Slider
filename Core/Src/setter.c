@@ -21,9 +21,9 @@ MotorErr set(Motor_T *sett) {
 	if (!time) {
 		return MOTOR_ERROR;
 	}
-	uint16_t length = round(len / sett->device.points_num);
+	//uint16_t length = round(len / sett->device.points_num);
 	int stepSize = sett->device.stepSize;
-	sett->counter.stepLeft = set_stepLeft(length, stepSize);
+	sett->counter.stepLeft = set_stepLeft(len, stepSize);
 	//int (*fun)(uint16_t, int) = &set_stepLeft;
 	int stepLeftx2 = sett->counter.stepLeft;
 	sett->counter.pulse = set_pulse(time, stepLeftx2, micro);
@@ -51,7 +51,7 @@ MotorErr set_for_angle(Motor_T *sett) {
 	return retVal;
 }
 int set_stepLeft(uint16_t len, int step) {
-	return ceil((2 * len) / step);
+	return ceil((2 *10* len) / step);
 }
 uint16_t set_pulse(uint16_t time, int stepleft, uint8_t micro) {
 	return ((ceil(TIM_FREQ * time) / stepleft) * pow(2, micro));
