@@ -42,7 +42,7 @@ Motor_T motor1 = {
 				.motor_num = 1,
 				.microstep =1,
 				.positionStart =1,
-				.stepSize = 3,
+				.stepSize = 3.0,
 		},
 };
 // Step size from motor2 is in degrees
@@ -74,7 +74,7 @@ Motor_T motor2 = {
 						//.speed = 0,
 						.microstep =1,
 						.positionStart =1,
-						.stepSize = 1.8,
+						.stepSize = 2.9,
 				},
 };
 
@@ -106,7 +106,7 @@ Motor_T motor3 = {
 						//.speed = 0,
 						.microstep =1,
 						.positionStart =1,
-						.stepSize = 1.8,
+						.stepSize = 2.9,
 				},
 };
 

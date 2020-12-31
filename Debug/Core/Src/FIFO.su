@@ -1,5 +1,5 @@
 FIFO.c:12:9:get_amount_of_times	24	static
-FIFO.c:24:6:read_data	32	static
-FIFO.c:40:19:getLast	16	static
-FIFO.c:49:6:write_data_to_FIFO	24	static
-FIFO.c:67:5:read_time	24	static
+FIFO.c:27:6:read_data	32	static
+FIFO.c:46:19:getLast	16	static
+FIFO.c:56:6:write_data_to_FIFO	24	static
+FIFO.c:74:5:read_time	24	static

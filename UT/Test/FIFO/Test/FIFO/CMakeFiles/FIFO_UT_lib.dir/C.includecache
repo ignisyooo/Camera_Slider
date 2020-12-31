@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../../Core/Inc/FIFO.h
+stdint.h
+-
+
+/mnt/c/Users/rzesz/Desktop/Coding/STM_Code/Slider_Controller/Core/Src/FIFO.c
+FIFO.h
+/mnt/c/Users/rzesz/Desktop/Coding/STM_Code/Slider_Controller/Core/Src/FIFO.h
+stdio.h
+-
+stdlib.h
+-
+

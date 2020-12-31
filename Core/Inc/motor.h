@@ -60,10 +60,6 @@ typedef struct Motor_Tag {
 		int16_t positionEnd;
 	} device;
 
-	struct {
-		int position;
-		double speed;
-	} data;
 
 	Fifo_data *fifo;
 

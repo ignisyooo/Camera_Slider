@@ -1,0 +1,2 @@
+/usr/bin/ar qc libFIFO_UT_lib.a  CMakeFiles/FIFO_UT_lib.dir/mnt/c/Users/rzesz/Desktop/Coding/STM_Code/Slider_Controller/Core/Src/FIFO.c.o
+/usr/bin/ranlib libFIFO_UT_lib.a

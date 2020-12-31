@@ -15,8 +15,7 @@ typedef struct Fifo_data_Tag
 	struct Fifo_data_Tag *next;
 	uint16_t time;
 	uint16_t length;
-}Fifo_data;
-
+} Fifo_data;
 
 uint8_t get_amount_of_times(Fifo_data *data);
 void read_data(Fifo_data **data, uint16_t *a, uint16_t *b);
@@ -24,6 +23,5 @@ void read_data(Fifo_data **data, uint16_t *a, uint16_t *b);
 static Fifo_data *getLast(Fifo_data *data);
 void write_data_to_FIFO(Fifo_data **data, uint16_t val, uint16_t len);
 int read_time(Fifo_data *data);
-
 
 #endif /* INC_FIFO_H_ */

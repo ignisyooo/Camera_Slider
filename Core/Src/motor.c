@@ -62,13 +62,12 @@ MotorErr Motor_MicroPinSet(Motor_T *sett) {
 void Motor_Init(Motor_T *sett) {
 	sett->flags.isOn = 0;
 	sett->flags.reset = 0;
-	sett->flags.direction = CWC;
+	sett->flags.direction = CW;
 	sett->flags.sleep = 1;
 	sett->flags.stepPhase = LOW;
 
 	sett->counter.pulse = 0;
 	sett->counter.stepLeft = 0;
-	sett->data.position = 0;
 	sett->device.points_num = -1;
 
 	sett->device.microstep = 0;
@@ -90,6 +89,7 @@ MotorErr motorStop(Motor_T *sett) {
 
 	return retval;
 }
+
 MotorErr motorRun(Motor_T *sett) {
 	MotorErr retval = MOTOR_OK;
 	if (!sett->flags.reset && !sett->flags.sleep) {
@@ -111,11 +111,6 @@ MotorErr motorRun(Motor_T *sett) {
 			case LOW:
 				sett->flags.stepPhase = HIGH;
 				sett->flags.isOn = 1;
-				if (sett->flags.direction == CWC) {
-					sett->data.position -= sett->device.stepSize;
-				} else {
-					sett->data.position += sett->device.stepSize;
-				}
 				break;
 			default:
 				retval = MOTOR_ERROR;

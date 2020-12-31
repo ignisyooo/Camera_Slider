@@ -34,8 +34,8 @@ void UART_WriteData(Motor_T *data, uint16_t *tab, Trigger_T *time) {
 		}
 		i++;
 	}
-	time->device = tab[++i];
-	time->period = tab[++i];
+	time->device = tab[i++];
+	time->period = tab[i];
 
 	UART_Confirm();
 }
