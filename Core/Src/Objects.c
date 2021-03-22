@@ -24,12 +24,6 @@ Motor_T motor1 = {
 		.PIN = MOTOR1_SLEEP_Pin },
 		.Pin_Steep = { .PORT = MOTOR1_STEP_GPIO_Port,
 		.PIN = MOTOR1_STEP_Pin},
-		.MS1 = { .PORT = MOTOR1_MS1_GPIO_Port,
-		. PIN = MOTOR1_MS1_Pin },
-		.MS2 = { .PORT = MOTOR1_MS2_GPIO_Port, . PIN =
-		MOTOR1_MS2_Pin },
-		.MS3 = { .PORT = MOTOR1_MS3_GPIO_Port, . PIN =
-		MOTOR1_MS3_Pin },
 
 		.flags = {
 				.isOn = 0,
@@ -55,12 +49,6 @@ Motor_T motor2 = {
 				.PIN = MOTOR2_SLEEP_Pin },
 				.Pin_Steep = { .PORT = MOTOR2_STEP_GPIO_Port,
 				.PIN = MOTOR2_STEP_Pin},
-				.MS1 = { .PORT = MOTOR2_MS1_GPIO_Port,
-				. PIN = MOTOR2_MS1_Pin },
-				.MS2 = { .PORT = MOTOR2_MS2_GPIO_Port, . PIN =
-				MOTOR2_MS2_Pin },
-				.MS3 = { .PORT = MOTOR2_MS3_GPIO_Port, . PIN =
-				MOTOR2_MS3_Pin },
 
 				.flags = {
 						.isOn = 0,
@@ -71,7 +59,6 @@ Motor_T motor2 = {
 
 				.device = {
 						.motor_num = 2,
-						//.speed = 0,
 						.microstep =1,
 						.positionStart =1,
 						.stepSize = 2.9,
@@ -87,12 +74,6 @@ Motor_T motor3 = {
 				.PIN = MOTOR3_SLEEP_Pin },
 				.Pin_Steep = { .PORT = MOTOR3_STEP_GPIO_Port,
 				.PIN = MOTOR3_STEP_Pin},
-				.MS1 = { .PORT = MOTOR3_MS1_GPIO_Port,
-				. PIN = MOTOR3_MS1_Pin },
-				.MS2 = { .PORT = MOTOR3_MS2_GPIO_Port, . PIN =
-				MOTOR3_MS2_Pin },
-				.MS3 = { .PORT = MOTOR3_MS3_GPIO_Port, . PIN =
-				MOTOR3_MS3_Pin },
 
 				.flags = {
 						.isOn = 0,
@@ -103,7 +84,6 @@ Motor_T motor3 = {
 
 				.device = {
 						.motor_num = 3,
-						//.speed = 0,
 						.microstep =1,
 						.positionStart =1,
 						.stepSize = 2.9,

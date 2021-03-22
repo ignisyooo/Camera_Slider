@@ -1,5 +1,0 @@
-setter.c:13:5:poteg	24	static
-setter.c:24:10:set	32	static
-setter.c:45:10:set_for_angle	32	static
-setter.c:65:5:set_stepLeft	32	static
-setter.c:68:10:set_pulse	24	static

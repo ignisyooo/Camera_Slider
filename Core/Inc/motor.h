@@ -33,9 +33,6 @@ typedef struct Motor_Tag {
 	IO_Pin Pin_Sleep;
 	IO_Pin Pin_Direction;
 	IO_Pin Pin_Steep;
-	IO_Pin MS1;
-	IO_Pin MS2;
-	IO_Pin MS3;
 
 	struct {
 		uint8_t isOn :1;
@@ -67,7 +64,6 @@ typedef struct Motor_Tag {
 
 void Motor_Init(Motor_T *sett);
 void Motor_PinMode(Motor_T *sett);
-MotorErr Motor_MicroPinSet(Motor_T *sett);
 MotorErr motorRun(Motor_T *sett);
 MotorErr motorStartMove(Motor_T *sett);
 MotorErr motorStop(Motor_T *sett);

@@ -2,7 +2,7 @@
  * self_timer.c
  *
  *  Created on: Oct 21, 2020
- *      Author: rzesz
+ *      Author: rzeszutko
  */
 #include "self_timer.h"
 

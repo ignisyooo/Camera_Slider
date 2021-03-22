@@ -26,7 +26,6 @@ uint8_t get_amount_of_times(Fifo_data *data)
 
 void read_data(Fifo_data **data, uint16_t *a, uint16_t *b)
 {
-	uint16_t retVal;
 	if (*data == NULL)
 	{
 		*a = 0;

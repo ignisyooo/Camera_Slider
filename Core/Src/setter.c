@@ -2,7 +2,7 @@
  * setter.c
  *
  *  Created on: Oct 9, 2020
- *      Author: rzesz
+ *      Author: rzeszutko
  */
 #include "setter.h"
 #include <math.h>
@@ -63,7 +63,7 @@ MotorErr set_for_angle(Motor_T *sett) {
 	return retVal;
 }
 int set_stepLeft(uint16_t len, float step, uint8_t micro) {
-	return (ceil((2 *10* len) / step)* poteg(2,micro));
+	return (ceil((2 *10* len) / step));
 }
 uint16_t set_pulse(uint16_t time, int stepleft) {
 	return (ceil(TIM_FREQ * time) / stepleft);

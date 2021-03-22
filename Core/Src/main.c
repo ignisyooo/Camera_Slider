@@ -132,6 +132,7 @@ int main(void)
 			HAL_TIM_Base_Stop_IT(&htim7);
 		}
     /* USER CODE END WHILE */
+
     /* USER CODE BEGIN 3 */
 	}
   /* USER CODE END 3 */

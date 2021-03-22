@@ -60,8 +60,6 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define CAMERA_T_Pin GPIO_PIN_2
 #define CAMERA_T_GPIO_Port GPIOA
-#define MOTOR2_MS1_Pin GPIO_PIN_4
-#define MOTOR2_MS1_GPIO_Port GPIOA
 #define MOBILE_T_Pin GPIO_PIN_5
 #define MOBILE_T_GPIO_Port GPIOA
 #define MOTOR2_STEP_Pin GPIO_PIN_6
@@ -72,18 +70,8 @@ void Error_Handler(void);
 #define MOTOR2_SLEEP_GPIO_Port GPIOC
 #define MOTOR2_RESET_Pin GPIO_PIN_5
 #define MOTOR2_RESET_GPIO_Port GPIOC
-#define MOTOR2_MS2_Pin GPIO_PIN_0
-#define MOTOR2_MS2_GPIO_Port GPIOB
-#define MOTOR2_MS3_Pin GPIO_PIN_1
-#define MOTOR2_MS3_GPIO_Port GPIOB
 #define LIMIT_SWITCH_Pin GPIO_PIN_2
 #define LIMIT_SWITCH_GPIO_Port GPIOB
-#define MOTOR1_MS3_Pin GPIO_PIN_14
-#define MOTOR1_MS3_GPIO_Port GPIOB
-#define MOTOR1_MS2_Pin GPIO_PIN_15
-#define MOTOR1_MS2_GPIO_Port GPIOB
-#define MOTOR1_MS1_Pin GPIO_PIN_6
-#define MOTOR1_MS1_GPIO_Port GPIOC
 #define MOTOR1_RESET_Pin GPIO_PIN_7
 #define MOTOR1_RESET_GPIO_Port GPIOC
 #define MOTOR1_SLEEP_Pin GPIO_PIN_8
@@ -92,12 +80,6 @@ void Error_Handler(void);
 #define MOTOR1_DIR_GPIO_Port GPIOC
 #define MOTOR1_STEP_Pin GPIO_PIN_8
 #define MOTOR1_STEP_GPIO_Port GPIOA
-#define MOTOR3_MS3_Pin GPIO_PIN_10
-#define MOTOR3_MS3_GPIO_Port GPIOC
-#define MOTOR3_MS2_Pin GPIO_PIN_11
-#define MOTOR3_MS2_GPIO_Port GPIOC
-#define MOTOR3_MS1_Pin GPIO_PIN_12
-#define MOTOR3_MS1_GPIO_Port GPIOC
 #define MOTOR3_RESET_Pin GPIO_PIN_2
 #define MOTOR3_RESET_GPIO_Port GPIOD
 #define MOTOR3_DIR_Pin GPIO_PIN_4

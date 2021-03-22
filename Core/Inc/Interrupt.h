@@ -2,7 +2,7 @@
  * Interrupt.h
  *
  *  Created on: Oct 6, 2020
- *      Author: rzesz
+ *      Author: rzeszutko
  */
 
 #ifndef INC_INTERRUPT_H_

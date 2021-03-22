@@ -2,7 +2,7 @@
  * parametr.h
  *
  *  Created on: 6 paź 2020
- *      Author: rzesz
+ *      Author: rzeszutko
  */
 #ifndef INC_PARAMETR_H_
 #define INC_PARAMETR_H_

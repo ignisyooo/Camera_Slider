@@ -24,41 +24,6 @@ void Motor_PinMode(Motor_T *sett) {
 			(sett->flags.direction) ? GPIO_PIN_SET : GPIO_PIN_RESET);
 }
 
-MotorErr Motor_MicroPinSet(Motor_T *sett) {
-	MotorErr retValue = MOTOR_OK;
-	switch (sett->device.microstep) {
-	case 0:
-		HAL_GPIO_WritePin(sett->MS1.PORT, sett->MS1.PIN, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(sett->MS2.PORT, sett->MS2.PIN, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(sett->MS3.PORT, sett->MS3.PIN, GPIO_PIN_RESET);
-		break;
-	case 1:
-		HAL_GPIO_WritePin(sett->MS1.PORT, sett->MS1.PIN, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(sett->MS2.PORT, sett->MS2.PIN, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(sett->MS3.PORT, sett->MS3.PIN, GPIO_PIN_RESET);
-		break;
-	case 2:
-		HAL_GPIO_WritePin(sett->MS1.PORT, sett->MS1.PIN, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(sett->MS2.PORT, sett->MS2.PIN, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(sett->MS3.PORT, sett->MS3.PIN, GPIO_PIN_RESET);
-		break;
-	case 3:
-		HAL_GPIO_WritePin(sett->MS1.PORT, sett->MS1.PIN, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(sett->MS2.PORT, sett->MS2.PIN, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(sett->MS3.PORT, sett->MS3.PIN, GPIO_PIN_RESET);
-		break;
-
-	case 4:
-		HAL_GPIO_WritePin(sett->MS1.PORT, sett->MS1.PIN, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(sett->MS2.PORT, sett->MS2.PIN, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(sett->MS3.PORT, sett->MS3.PIN, GPIO_PIN_SET);
-		break;
-	default:
-		retValue = MOTOR_ERROR;
-	}
-	return retValue;
-}
-
 void Motor_Init(Motor_T *sett) {
 	sett->flags.isOn = 0;
 	sett->flags.reset = 0;
@@ -72,7 +37,6 @@ void Motor_Init(Motor_T *sett) {
 
 	sett->device.microstep = 0;
 	Motor_PinMode(sett);
-	Motor_MicroPinSet(sett);
 }
 
 MotorErr motorStop(Motor_T *sett) {

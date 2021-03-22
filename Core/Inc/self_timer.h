@@ -2,7 +2,7 @@
  * self_timer.h
  *
  *  Created on: Oct 21, 2020
- *      Author: rzesz
+ *      Author: rzeszutko
  */
 
 #ifndef INC_SELF_TIMER_H_
